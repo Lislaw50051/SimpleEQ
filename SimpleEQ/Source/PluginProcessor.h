@@ -52,6 +52,8 @@ public:
     const juce::String getProgramName (int index) override;
     void changeProgramName (int index, const juce::String& newName) override;
 
+    static juce::AudioProcessorValueTreeState::ParameterLayout createparameterlayout();
+    juce::AudioProcessorValueTreeState apvts{ *this, nullptr,"Parameters", createparameterlayout()};
     //==============================================================================
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
